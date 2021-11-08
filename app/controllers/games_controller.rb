@@ -13,12 +13,10 @@ class GamesController < ApplicationController
     # need to check whether answer only has characters from the valid_letters array
     allowed = /\A[\d#{valid_letters}]+\z/i
 
-    if !(answer.match? allowed)
-      @result = "Sorry, but #{answer} can\'t be built out of #{valid_letters}"
-    else
-      @result = check_word(answer)
-    end
+    !(answer.match? allowed) ? @result = "Sorry, but #{answer} can\'t be built out of #{valid_letters}" : @result = check_word(answer)
   end
+
+  private
 
   def check_word(answer)
     url = "https://wagon-dictionary.herokuapp.com/#{answer}"
@@ -27,6 +25,6 @@ class GamesController < ApplicationController
 
     return "Sorry, but #{answer} does not seem to be a valid English word" if word['found'] == false
 
-    return "Congratulations, #{answer} is a valid English word, your score is #{answer.length}"
+    "Congratulations, #{answer} is a valid English word, your score is #{answer.length}"
   end
 end
