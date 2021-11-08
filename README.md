@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Le Wagon bootcamp exercise to get familiar with making Rails application.
 
-Things you may want to cover:
+This game provides the user with a list of valid letters. The user should try to the longest valid word using the letters given.
 
-* Ruby version
+To check whether a word is valid, we use the `wagon-dictionary API` here: https://wagon-dictionary.herokuapp.com/
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you would like to run this application, download the file and run it on your local server.
